@@ -1,0 +1,5 @@
+###### 021 Understanding Dependency Injection & Injecting DbContext Into Our Application
+vào program tạo services 
+
+builder.Services.AddDbContext<NZWalksDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("NZWalksConnectionString")));
+	+ Note: "NZWalksConnectionString" được lấy từ file appsettings.json (đã được tạo kết nối tới database local:host trước đó)
