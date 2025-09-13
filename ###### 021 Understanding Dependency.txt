@@ -3,3 +3,11 @@ vào program tạo services
 
 builder.Services.AddDbContext<NZWalksDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("NZWalksConnectionString")));
 	+ Note: "NZWalksConnectionString" được lấy từ file appsettings.json (đã được tạo kết nối tới database local:host trước đó)
+
+###### 022 Run EF Core Migrations (automatically generate database on SQL Server)
+- Step 1: tools -> NuGet package manager -> Package Manager Console
+- Step 2: using `Add-Migration "Name of Migration"` to create database (folder named `Migrations` will be appeared on VS)
+- Step 3: using `Update-Database` to update database on SQL Server
+
+###### 025 Create New Controller (Regions Controller)
+folder Controllers -> create a controller -> define methods -> return value of methods
