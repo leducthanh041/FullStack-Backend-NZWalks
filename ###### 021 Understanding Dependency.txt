@@ -11,3 +11,6 @@ builder.Services.AddDbContext<NZWalksDbContext>(options => options.UseSqlServer(
 
 ###### 025 Create New Controller (Regions Controller)
 folder Controllers -> create a controller -> define methods -> return value of methods
+
+###### CRUD method
+define methods in Controller -> create dto in DTO folder -> in dto file, define attributes that can be updated
