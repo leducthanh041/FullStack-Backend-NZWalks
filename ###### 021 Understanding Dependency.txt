@@ -14,3 +14,6 @@ folder Controllers -> create a controller -> define methods -> return value of m
 
 ###### CRUD method
 define methods in Controller -> create dto in DTO folder -> in dto file, define attributes that can be updated
+
+###### 007 Implement Automapper
+add package: dependencies -> manage nuget package -> type "automapper"
