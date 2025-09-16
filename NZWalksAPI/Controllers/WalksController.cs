@@ -36,5 +36,13 @@ namespace NZWalksAPI.Controllers
 
             return Ok(walkDto);
         }
+
+        // GET Walks
+        // GET: /api/walks
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            
+        }
     }
 }
