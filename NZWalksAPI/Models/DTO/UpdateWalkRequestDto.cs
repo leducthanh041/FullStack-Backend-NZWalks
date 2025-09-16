@@ -1,6 +1,6 @@
 ﻿namespace NZWalksAPI.Models.DTO
 {
-    public class WalkDto
+    public class UpdateWalkRequestDto
     {
         public Guid Id { get; set; }
 
@@ -15,10 +15,5 @@
         public Guid DifficultyId { get; set; }
 
         public Guid RegionId { get; set; }
-
-        // Navigation properties
-        public RegionDto Region { get; set; }
-
-        public DifficultyDto Difficulty { get; set; }
     }
 }
