@@ -20,3 +20,15 @@ add package: dependencies -> manage nuget package -> type "automapper"
 
 ###### 002 Seeding Data Using Entity Framework Core
 to create Guid: View -> Other window -> C# Interactive
+
+###### CRUD method (now for another route)
+- Step 1: define methods in Controller
+- Step 2: create dto in DTO folder (in dto file, define attributes that can be updated)
+- Step 3: create automapper in Mappings
+- Step 4: create "constructor" (ctor) in "controller" (remember push "ctrl + ." to create "fields")
+- Step 5: now Map DTO to Domain model in methods
+- Step 6: create repository (This should be created first, instead of creating methods first in controller, but It's ok)
+- Step 7: create concrete implementation: SQL"Name"Repository, inheretance from INTERFACE, create "constructor" (ctor) for dbContext (remember push "ctrl + ." to create "fields")
+- Step 8: remember to inject in program.cs file
+- Step 9: In file controller, define an INTERFACE parameter for ctor
+- Step 10: Now complete methods in controller
