@@ -17,3 +17,6 @@ define methods in Controller -> create dto in DTO folder -> in dto file, define 
 
 ###### 007 Implement Automapper
 add package: dependencies -> manage nuget package -> type "automapper"
+
+###### 002 Seeding Data Using Entity Framework Core
+to create Guid: View -> Other window -> C# Interactive
