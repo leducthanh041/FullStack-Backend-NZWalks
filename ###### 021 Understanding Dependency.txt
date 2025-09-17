@@ -22,14 +22,14 @@ add package: dependencies -> manage nuget package -> type "automapper"
 to create Guid: View -> Other window -> C# Interactive
 
 ###### CRUD method (now for another route)
-- Step 1: define methods in Controller
-- Step 2: create dto to map DTO to Domain Model in DTO folder (in dto file, define attributes that can be updated)
-- Step 3: create automapper in Mappings
-- Step 4: create "constructor" (ctor) in "controller" (remember push "ctrl + ." to create "fields")
+- Step 1: define methods in Controller, interface, and SQLRepository
+- Step 2: create dto to map DTO to Domain Model in DTO folder (in dto file, define attributes that can be updated) -> TWO TIMES: create and update
+- Step 3: create automapper in Mappings -> TWO TIMES: create and update
+- Step 4: create "constructor" (ctor) in "controller" (remember push "ctrl + ." to create "fields") -> ONE TIME
 - Step 5: now Map DTO to Domain model in methods
-- Step 6: create repository (This should be created first, instead of creating methods first in controller, but It's ok)
-- Step 7: create concrete implementation: SQL"Name"Repository, inheretance from INTERFACE, create "constructor" (ctor) for dbContext (remember push "ctrl + ." to create "fields")
-- Step 8: remember to inject in program.cs file
-- Step 9: In file controller, define an INTERFACE parameter for ctor
-- Step 10: Create a DTO to map domain model to dto, remember to create a new Map in AutoMapper
+- Step 6: create repository (This should be created first, instead of creating methods first in controller, but It's ok) -> ONE TIME
+- Step 7: create concrete implementation: SQL"Name"Repository, inheretance from INTERFACE, create "constructor" (ctor) for dbContext (remember push "ctrl + ." to create "fields") -> ONE TIME
+- Step 8: remember to inject in program.cs file -> ONE TIME
+- Step 9: In file controller, define an INTERFACE parameter for ctor -> ONE TIME
+- Step 10: Create a DTO to map domain model to dto, remember to create a new Map in AutoMapper -> TWO TIMES: create and update
 - Step 11: Now complete methods in controller
