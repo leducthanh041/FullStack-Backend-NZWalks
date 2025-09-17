@@ -26,15 +26,20 @@ namespace NZWalksAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] AddWalkRequestDto addWalkRequestDto)
         {
-            // Map DTO to Domain Model
-            var walkDomainModel = mapper.Map<Walk>(addWalkRequestDto);
+            if(ModelState.IsValid)
+            {
+                // Map DTO to Domain Model
+                var walkDomainModel = mapper.Map<Walk>(addWalkRequestDto);
 
-            walkDomainModel = await walkRepository.CreateAsync(walkDomainModel);
+                walkDomainModel = await walkRepository.CreateAsync(walkDomainModel);
 
-            // Map Domain Model to DTO
-            var walkDto = mapper.Map<WalkDto>(walkDomainModel);
+                // Map Domain Model to DTO
+                var walkDto = mapper.Map<WalkDto>(walkDomainModel);
 
-            return Ok(walkDto);
+                return Ok(walkDto);
+            }
+            
+            return BadRequest(ModelState);
         }
 
         // GET Walks
@@ -75,20 +80,25 @@ namespace NZWalksAPI.Controllers
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateById([FromRoute] Guid id, [FromBody] UpdateWalkRequestDto updateWalkRequestDto)
         {
-            // Map DTO to domain model
-            var walkDomainModel = mapper.Map<Walk>(updateWalkRequestDto);
-
-            walkDomainModel = await walkRepository.UpdateAsync(id, walkDomainModel);
-
-            if (walkDomainModel == null)
+            if(ModelState.IsValid)
             {
-                return NotFound();
+                // Map DTO to domain model
+                var walkDomainModel = mapper.Map<Walk>(updateWalkRequestDto);
+
+                walkDomainModel = await walkRepository.UpdateAsync(id, walkDomainModel);
+
+                if (walkDomainModel == null)
+                {
+                    return NotFound();
+                }
+
+                // Map Domain Model to DTO
+                var walkDto = mapper.Map<WalkDto>(walkDomainModel);
+
+                return Ok(walkDto);
             }
 
-            // Map Domain Model to DTO
-            var walkDto = mapper.Map<WalkDto>(walkDomainModel);
-
-            return Ok(walkDto);
+            return BadRequest(ModelState);
         }
 
         // DELETE walk
