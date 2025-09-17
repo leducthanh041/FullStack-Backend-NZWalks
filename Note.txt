@@ -33,3 +33,6 @@ to create Guid: View -> Other window -> C# Interactive
 - Step 9: In file controller, define an INTERFACE parameter for ctor -> ONE TIME
 - Step 10: Create a DTO to map domain model to dto, remember to create a new Map in AutoMapper -> TWO TIMES: create and update
 - Step 11: Now complete methods in controller
+
+###### 003 Custom Validate Model Attribute
+create `CustomActionFilters` folder -> creating ValidateModelAttribute.cs file
